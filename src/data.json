@@ -1,0 +1,77 @@
+{
+
+    "products": [
+        {
+            "_id": "hoodie1",
+            "title": "Hoodie 1",
+            "image": "/images/hoodie1.jpg",
+            "description": "All black hoodie",
+            "price": 80,
+            "availableSizes": [
+                "S",
+                "M",
+                "L"
+            ]
+        },
+        {
+            "_id": "Hoodie2",
+            "title": "Hoodie 2",
+            "image": "/images/hoodie2.jpg",
+            "description": "All white hoodie",
+            "price": 80,
+            "availableSizes": [
+                "S",
+                "M",
+                "L"
+            ]
+        },
+        {
+            "_id": "Hoodie3",
+            "title": "Hoodie 3",
+            "image": "/images/hoodie3.jpg",
+            "description": "All grey hoodie",
+            "price": 80,
+            "availableSizes": [
+                "S",
+                "M",
+                "L"
+            ]
+        },
+        {
+            "_id": "tshirt1",
+            "title": "Tshirt 1",
+            "image": "/images/tshirt1.jpg",
+            "description": "All black t-shirt",
+            "price": 80,
+            "availableSizes": [
+                "S",
+                "M",
+                "L"
+            ]
+        },
+        {
+            "_id": "tshirt2",
+            "title": "Tshirt 2",
+            "image": "/images/tshirt2.jpg",
+            "description": "All white t-shirt",
+            "price": 80,
+            "availableSizes": [
+                "S",
+                "M",
+                "L"
+            ]
+        },
+        {
+            "_id": "tshirt3",
+            "title": "Tshirt 3",
+            "image": "/images/tshirt3.jpg",
+            "description": "All grey t-shirt",
+            "price": 80,
+            "availableSizes": [
+                "S",
+                "M",
+                "L"
+            ]
+        }
+    ]
+}
