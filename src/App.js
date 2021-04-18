@@ -3,6 +3,8 @@ import data from "./data.json";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
 import {BrowserRouter, Route, Link} from 'react-router-dom';
+import store from "./store";
+import { Provider } from "react-redux";
 
 
 class App extends React.Component {
@@ -48,11 +50,11 @@ class App extends React.Component {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
 
-  }
+  };
   render(){
   return (
     
-    <BrowserRouter>
+    <Provider store={store}> 
     <div className="grid-container">
       <header>
         <a href="/">YUTA SHOP</a>
@@ -75,7 +77,7 @@ class App extends React.Component {
             </footer> 
       
     </div>
-    </BrowserRouter>
+    </Provider>
  
   );
   }

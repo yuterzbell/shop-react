@@ -1,10 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { fetchProducts } from "../actions/productActions";
+import { connect}  from "react-redux";
 
-export default class Products extends Component {
+class Products extends Component {
+
+    componentDidMount() {
+        this.props.fetchProducts();
+    }
     render() {
         return (
             <div>
-                <ul className="products">
+                {
+                    !this.props.products ? <div> loading...</div>:
+                    <ul className="products">
                     {this.props.products.map((product) => (
                         <li key={product._id}>
                             <div className="product">
@@ -27,8 +35,13 @@ export default class Products extends Component {
                         </li>
                     ))}
                 </ul>
+
+                }
+
                 
             </div>
         );
     }
 }
+
+export default connect((state)=>({products: state.products.items}),{fetchProducts})(Products);
