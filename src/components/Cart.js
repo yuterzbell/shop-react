@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom';
 
 export default class Cart extends Component {
     constructor(props){
@@ -14,7 +14,7 @@ export default class Cart extends Component {
     handleInput = (e) =>{
 
         this.setState({[e.target.name]: e.target.value });
-    }
+    };
     createOrder = (e) =>{
         e.preventDefault();
         const order = {
@@ -95,7 +95,9 @@ export default class Cart extends Component {
                                     <input name="address" type="text" required onChange={this.handleInput}></input>
 
                                 </li>
+                                    <Link to={'/checkout'}>
                                     <button className="button primary" type="submit">Checkout</button>
+                                    </Link>
                             </ul>
                             </form>
                             </div>

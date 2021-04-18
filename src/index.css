@@ -224,3 +224,35 @@ input{
   padding: 1rem;
   border: 0.1rem #c0c0c0 solid;
 }
+
+.checkoutPage{
+
+  transform: translateX(-100rem);
+
+}
+
+.checkoutTitle{
+
+  text-align: center;
+  padding: 10rem;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.cart-items-checkout{
+
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart-items-checkout li{
+  list-style-type: none;
+  padding: 10rem;
+  
+}
+
+.cart-items-checkout img{
+  width: 20rem;
+}

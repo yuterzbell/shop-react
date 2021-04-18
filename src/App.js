@@ -1,8 +1,9 @@
 import React from 'react';
 import data from "./data.json";
 import Products from "./components/Products";
+import Checkout from "./components/Checkout";
 import Cart from "./components/Cart";
-import {BrowserRouter, Route, Link} from 'react-router-dom';
+import {BrowserRouter, Route, Link, Switch} from 'react-router-dom';
 import store from "./store";
 import { Provider } from "react-redux";
 
@@ -54,6 +55,7 @@ class App extends React.Component {
   render(){
   return (
     
+    <BrowserRouter>
     <Provider store={store}> 
     <div className="grid-container">
       <header>
@@ -61,8 +63,10 @@ class App extends React.Component {
       </header>
       <main>
         <div className="content">
-        
-        <div className="main"><Products 
+        <div className="main">
+
+          
+        <Products 
         products={this.state.products} 
         addToCart={this.addToCart}>
         </Products></div> 
@@ -70,6 +74,9 @@ class App extends React.Component {
         <div className="sidebar">
           <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart} createOrder={this.createOrder}></Cart>
         </div>
+        <Switch>
+        <Route path="/checkout" render={(props) => <Checkout removeFromCart={this.removeFromCart} cartItems={this.state.cartItems} />} />
+        </Switch>
         </div>
       </main>
       <footer className="footer">
@@ -78,6 +85,7 @@ class App extends React.Component {
       
     </div>
     </Provider>
+    </BrowserRouter>
  
   );
   }
