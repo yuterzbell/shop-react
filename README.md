@@ -23,3 +23,4 @@ https://react-ecommerce-yuterz-test.herokuapp.com/
 - React
 - MongoDB
 - Postman (api testing and populating database)
+- Heroku (Deploy)
