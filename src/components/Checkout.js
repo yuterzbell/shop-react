@@ -1,28 +1,47 @@
 import React from "react";
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import data from "../data";
 import Modal from "react-modal";
 import Zoom from "react-reveal/Zoom";
+import { withAlert } from 'react-alert';
 
-export default class Cart extends Component {
-  handleCloseModal = () => {};
 
-  payNow = (e, cartI) => {
+export default class Checkout extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            card: ""
+    
+        };
+  
+    };
+
+    handleCardChange = (e) => {
+        this.setState({card: e.target.value});
+      };
+
+  payNow = (e, items) => {
     e.preventDefault();
-    cartI.map((item) => this.props.removeFromCart(item));
+    /*items.map((item) => this.props.removeFromCart(item))*/;
+    window.location.href = "/";
 
+    
+    alert("Your order has been placed! Click OK to SHOP more! ")
+    
 
   };
 
   handleInput = (e) =>{
 
     this.setState({[e.target.name]: e.target.value });
-}
+};
 
   render() {
     const { cartItems } = this.props;
+    
     return (
+        
       <Modal isOpen={true}>
         <Zoom>
           <div>
@@ -48,16 +67,18 @@ export default class Cart extends Component {
           <div>
             Total: ${cartItems.reduce((a, c) => a + c.price * c.count, 0)}
           </div>
+          
                 <form onSubmit={e=>this.payNow(e,cartItems)}>
           <ul>
 
               <li>
                 <label>Credit Card Number</label>
-                     <input name="Card Number" type="text" required onChange={this.handleInput}></input>
+                     <input name="Card Number"  value={this.state.card} type="text" required onChange={this.handleCardChange}></input>
                      </li>
                      <li>
-            <button 
-              type="submit"
+            <button disabled={!(this.state.card)}
+                onClick={() => cartItems.map((item) => this.props.removeFromCart(item))}
+                type="submit"
             >
               Order Now!
             </button>

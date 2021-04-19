@@ -53,6 +53,7 @@ class App extends React.Component {
 
   };
   render(){
+
   return (
     
     <BrowserRouter>
@@ -76,6 +77,7 @@ class App extends React.Component {
         </div>
         <Switch>
         <Route path="/checkout" render={(props) => <Checkout removeFromCart={this.removeFromCart} cartItems={this.state.cartItems} />} />
+        
         </Switch>
         </div>
       </main>

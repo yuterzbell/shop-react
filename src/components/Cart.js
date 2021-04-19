@@ -10,11 +10,23 @@ export default class Cart extends Component {
         address: "",
         showCheckout: false};
 
-    }
+    };
+   
     handleInput = (e) =>{
 
         this.setState({[e.target.name]: e.target.value });
     };
+
+    handleNameChange = (e) => {
+        this.setState({name: e.target.value});
+      };
+      handleEmailChange = (e) => {
+        this.setState({email: e.target.value});
+      };
+      handleAddressChange = (e) => {
+        this.setState({address: e.target.value});
+      };
+
     createOrder = (e) =>{
         e.preventDefault();
         const order = {
@@ -27,6 +39,8 @@ export default class Cart extends Component {
         };
         this.props.createOrder(order);
     };
+
+    
     render() {
         const {cartItems} = this.props;
         return (
@@ -82,25 +96,30 @@ export default class Cart extends Component {
                             <ul className="form-container">
                                 <li>
                                     <label>Email</label>
-                                    <input name="email" type="email" required onChange={this.handleInput}></input>
+                                    <input name="email" type="email" value={this.state.email} required onChange={this.handleEmailChange}></input>
 
                                 </li>
                                 <li>
                                     <label>Name</label>
-                                    <input name="name" type="text" required onChange={this.handleInput}></input>
+                                    <input name="name" type="text" value={this.state.name} required onChange={this.handleNameChange}></input>
 
                                 </li>
                                 <li>
                                     <label>Address</label>
-                                    <input name="address" type="text" required onChange={this.handleInput}></input>
+                                    <input name="address" type="text" value={this.state.address} required onChange={this.handleAddressChange}></input>
 
                                 </li>
-                                    <Link to={'/checkout'}>
-                                    <button className="button primary" type="submit">Checkout</button>
+                                <Link to={'/checkout'}>
+                                <button className="primary button" disabled={!(this.state.email && this.state.name && this.state.address)} type="submit"> CHECKOUT </button>
+                                    
                                     </Link>
+                                    
                             </ul>
                             </form>
+                            
                             </div>
+
+                            
                         )}
                         </div>
                     )}
