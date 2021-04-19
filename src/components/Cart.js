@@ -23,9 +23,6 @@ export default class Cart extends Component {
       handleEmailChange = (e) => {
         this.setState({email: e.target.value});
       };
-      handleAddressChange = (e) => {
-        this.setState({address: e.target.value});
-      };
 
     createOrder = (e) =>{
         e.preventDefault();
@@ -104,15 +101,12 @@ export default class Cart extends Component {
                                     <input name="name" type="text" value={this.state.name} required onChange={this.handleNameChange}></input>
 
                                 </li>
-                                <li>
-                                    <label>Address</label>
-                                    <input name="address" type="text" value={this.state.address} required onChange={this.handleAddressChange}></input>
-
-                                </li>
+                                <div className="checkout-link">
                                 <Link to={'/checkout'}>
-                                <button className="primary button" disabled={!(this.state.email && this.state.name && this.state.address)} type="submit"> CHECKOUT </button>
+                                <button className="primary button" disabled={!(this.state.email && this.state.name)} type="submit">CHECKOUT </button>
                                     
                                     </Link>
+                                </div>
                                     
                             </ul>
                             </form>

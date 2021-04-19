@@ -17,9 +17,30 @@ export default class Checkout extends Component {
   
     };
 
-    handleCardChange = (e) => {
-        this.setState({card: e.target.value});
+    handleNameChange = (e) => {
+        this.setState({name: e.target.value});
       };
+
+      handleAddressChange = (e) => {
+        this.setState({address: e.target.value});
+      };
+
+      handleCardNameChange = (e) => {
+        this.setState({cardName: e.target.value});
+      };
+
+      handleCardNumChange = (e) => {
+        this.setState({cardNum: e.target.value});
+      };
+
+      handleCardExpChange = (e) => {
+        this.setState({cardExp: e.target.value});
+      };
+
+      handleCardCodeChange = (e) => {
+        this.setState({cardCode: e.target.value});
+      };
+
 
   payNow = (e, items) => {
     e.preventDefault();
@@ -70,14 +91,34 @@ export default class Checkout extends Component {
           </div>
           
                 <form onSubmit={e=>this.payNow(e,cartItems)}>
-          <ul>
-
+          <ul className="checkout-items">
+          <h3>Shipping Information</h3>
               <li>
-                <label>Credit Card Number</label>
-                     <input name="Card Number"  value={this.state.card} type="text" required onChange={this.handleCardChange}></input>
+                     <input placeholder="name" name="name"  value={this.state.name} type="text" required onChange={this.handleNameChange}></input>
                      </li>
+
                      <li>
-            <button disabled={!(this.state.card)}
+                     <input placeholder="full address" name="address"  value={this.state.address} type="text" required onChange={this.handleAddressChange}></input>
+                     </li>
+                        <h3>Billing Information</h3>
+                     <li>
+                     <input placeholder="name on card" name="Card name"  value={this.state.cardName} type="text" required onChange={this.handleCardNameChange}></input>
+                     </li>
+
+                     <li>
+                     <input placeholder="credit card #" name="Card number"  value={this.state.cardNum} type="text" required onChange={this.handleCardNumChange}></input>
+                     </li>
+
+                     <li>
+                     <input placeholder="exp. date (MMYY)" name="Card exp date"  value={this.state.cardExp} type="text" required onChange={this.handleCardExpChange}></input>
+                     </li>
+
+                     <li>
+                     <input placeholder="CSC" name="Card code"  value={this.state.cardCode} type="text" required onChange={this.handleCardCodeChange}></input>
+                     </li>
+
+                     <li>
+            <button disabled={!(this.state.name && this.state.address && this.state.cardName && this.state.cardNum && this.state.cardExp && this.state.cardCode)}
                 onClick={() => cartItems.map((item) => this.props.removeFromCart(item))}
                 type="submit"
             >

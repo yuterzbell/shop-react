@@ -123,6 +123,12 @@ align-items: center; /*vertical center*/
   font-size: 2rem;
 }
 
+.product-show{
+  text-align:center;
+  font-size: 1.8rem;
+  
+}
+
 .button{
   padding: 1rem;
   border: 0.1rem #C0C0C0 solid;
@@ -152,6 +158,17 @@ text-align: center;
   display: flex;
   flex-wrap: wrap;
 
+}
+
+.checkout-items{
+
+  list-style-type: none;
+  padding: 0.5rem;
+}
+
+.checkout-items li{
+
+  padding: 0.1rem;
 }
 
 .cart-header{
@@ -184,6 +201,10 @@ text-align: center;
   flex: 1;
 }
 
+.primary button{
+  color:blue;
+}
+
 .right{
   text-align: right;
 }
@@ -205,11 +226,13 @@ text-align: center;
 
 form{
   width: 100%;
+  
 }
 .form-container{
   padding:0;
   width: 100%;
   list-style-type:none;
+  
 }
 
 .form-container li{
@@ -231,11 +254,18 @@ input{
 
 }
 
+.checkout-link{
+  text-align: center;
+  padding-top: 3rem;
+}
+
 .checkoutTitle{
 
   text-align: center;
   padding: 10rem;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+
 
 }
 

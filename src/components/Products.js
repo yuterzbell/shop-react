@@ -17,12 +17,13 @@ class Products extends Component {
                     {this.props.products.map((product) => (
                         <li key={product._id}>
                             <div className="product">
-                                <a href={"#" + product._id}>
+                                    <div className="product-show">
                                     <img src={product.image} alt={product.title}></img>
                                     <p>
                                         {product.title}
                                     </p>
-                                </a>
+                                    </div>
+                                
                                 <div className="product-price">
                                     <div>
                                         ${product.price}
