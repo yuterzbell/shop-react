@@ -8,12 +8,12 @@ https://react-ecommerce-yuterz-test.herokuapp.com/
 - Product price and title
 - Add to cart
 - Interactive cart section (remove items)
-- Current total price
+- Total price
 - Ordering user form (name & email)
 
 ## CHECKOUT PAGE:
 #### Implemented features:
-- View products in cart
+- View selected items
 - Return to product page button
 - Dummy checkout form (shipping and billing information)
 - Total price
