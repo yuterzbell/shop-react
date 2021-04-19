@@ -65,7 +65,7 @@ class App extends React.Component {
     <Provider store={store}> 
     <div className="grid-container">
       <header>
-        <a href="/">YUTA SHOP</a>
+        <a href="/">YUTA'S THRIFT STORE</a>
       </header>
       <main>
         <div className="content">

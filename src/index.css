@@ -279,10 +279,17 @@ input{
 
 .cart-items-checkout li{
   list-style-type: none;
-  padding: 10rem;
+  padding-right: 10rem;
+  padding-left: 10rem;
   
 }
 
 .cart-items-checkout img{
   width: 20rem;
+}
+
+.finalPrice{
+
+ font-size: 2rem;
+ font:bold;
 }

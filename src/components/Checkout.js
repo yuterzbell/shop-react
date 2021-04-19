@@ -4,7 +4,8 @@ import { Link, useHistory } from "react-router-dom";
 import data from "../data";
 import Modal from "react-modal";
 import Zoom from "react-reveal/Zoom";
-import { withAlert } from 'react-alert';
+
+
 
 
 export default class Checkout extends Component {
@@ -59,6 +60,11 @@ export default class Checkout extends Component {
     this.setState({[e.target.name]: e.target.value });
 };
 
+    goBack = () =>{
+        window.location.href = "/";
+
+    };
+
   render() {
     const { cartItems } = this.props;
     
@@ -67,7 +73,8 @@ export default class Checkout extends Component {
       <Modal isOpen={true}>
         <Zoom>
           <div>
-            *ORDER NOT PROCESSED YET, YOU MAY GO BACK TO CONTINUE SHOPPING!*
+            <button className="button primary" onClick={() => this.goBack()}>GO BACK TO STORE PAGE</button>
+
           </div>
           <div className="checkoutTitle">CHECKOUT & PLACE ORDER</div>
 
@@ -86,7 +93,7 @@ export default class Checkout extends Component {
               ))}
             </ul>
           </div>
-          <div>
+          <div className="finalPrice">
             Total: ${cartItems.reduce((a, c) => a + c.price * c.count, 0)}
           </div>
           
@@ -118,7 +125,7 @@ export default class Checkout extends Component {
                      </li>
 
                      <li>
-            <button disabled={!(this.state.name && this.state.address && this.state.cardName && this.state.cardNum && this.state.cardExp && this.state.cardCode)}
+            <button className="button primary" disabled={!(this.state.name && this.state.address && this.state.cardName && this.state.cardNum && this.state.cardExp && this.state.cardCode)}
                 onClick={() => cartItems.map((item) => this.props.removeFromCart(item))}
                 type="submit"
             >
