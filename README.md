@@ -1,11 +1,13 @@
 # ECOMMERCE WEBSITE
 
+https://react-ecommerce-yuterz-test.herokuapp.com/
+
 ## PRODUCT PAGE:
 #### Implemented features:
 - Product catalog
 - Product price and title
 - Add to cart
-- interactive cart section (remove items)
+- Interactive cart section (remove items)
 - Current total price
 - Ordering user form (name & email)
 
