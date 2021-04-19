@@ -21,22 +21,21 @@ class App extends React.Component {
     };
 
   }
-  createOrder = (order) =>{
 
-    alert("Need to save order for" + order.name);
-  };
-
+  /*clearing all cart items*/
   clearCart = () =>{
     localStorage.clear();
 
   };
 
+  /*remove only specified item from cart*/
   removeFromCart = (product) =>{
     const cartItems = this.state.cartItems; /*.slice()*/
     this.setState({cartItems: cartItems.filter((x)=>x._id !== product._id) });
     localStorage.setItem("cartItems", JSON.stringify(cartItems.filter((x)=>x._id !== product._id)));
   };
   
+  /*add item to cart section*/
   addToCart = (product) => {
 
     const cartItems = this.state.cartItems.slice();
@@ -78,7 +77,7 @@ class App extends React.Component {
         </Products></div> 
 
         <div className="sidebar">
-          <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart} createOrder={this.createOrder}></Cart>
+          <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart}></Cart>
         </div>
         <Switch>
         <Route path="/checkout" render={(props) => <Checkout removeFromCart={this.removeFromCart} cartItems={this.state.cartItems} clearCart={this.clearCart} />} />

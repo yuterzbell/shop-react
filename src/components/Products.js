@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { fetchProducts } from "../actions/productActions";
 import { connect}  from "react-redux";
-import { Link } from 'react-router-dom';
 
 class Products extends Component {
 
@@ -14,6 +13,7 @@ class Products extends Component {
                 {
                     !this.props.products ? <div> loading...</div>:
                     <ul className="products">
+                        {/*displaying all the products one by one*/}
                     {this.props.products.map((product) => (
                         <li key={product._id}>
                             <div className="product">
