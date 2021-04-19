@@ -1,4 +1,4 @@
-# ECOMMERCE WEBSITE
+# ECOMMERCE WEBSITE (YUTA'S THRIFT SHOP)
 
 https://react-ecommerce-yuterz-test.herokuapp.com/
 
