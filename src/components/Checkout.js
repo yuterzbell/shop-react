@@ -23,7 +23,8 @@ export default class Checkout extends Component {
 
   payNow = (e, items) => {
     e.preventDefault();
-    /*items.map((item) => this.props.removeFromCart(item))*/;
+    /*items.map((item) => this.props.removeFromCart(item));*/
+    this.props.clearCart();
     window.location.href = "/";
 
     

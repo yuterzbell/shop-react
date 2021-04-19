@@ -26,8 +26,13 @@ class App extends React.Component {
     alert("Need to save order for" + order.name);
   };
 
+  clearCart = () =>{
+    localStorage.clear();
+
+  };
+
   removeFromCart = (product) =>{
-    const cartItems = this.state.cartItems.slice();
+    const cartItems = this.state.cartItems; /*.slice()*/
     this.setState({cartItems: cartItems.filter((x)=>x._id !== product._id) });
     localStorage.setItem("cartItems", JSON.stringify(cartItems.filter((x)=>x._id !== product._id)));
   };
@@ -76,7 +81,7 @@ class App extends React.Component {
           <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart} createOrder={this.createOrder}></Cart>
         </div>
         <Switch>
-        <Route path="/checkout" render={(props) => <Checkout removeFromCart={this.removeFromCart} cartItems={this.state.cartItems} />} />
+        <Route path="/checkout" render={(props) => <Checkout removeFromCart={this.removeFromCart} cartItems={this.state.cartItems} clearCart={this.clearCart} />} />
         
         </Switch>
         </div>
